@@ -1,0 +1,32 @@
+#!/bin/bash -f 
+# 
+export DIRI="/scr/guillemc/mpro_ebse/ebse/dyn_1"
+cd $DIRI
+
+
+source /home/jaime/.bashrc
+source  /home/prog/amber18/miniconda/bin/activate py3
+conda info --envs
+
+export  AMBERHOME=/home/prog/amber18
+source $AMBERHOME/amber.sh
+
+
+./R2_fdMD_ReactiveTraj.py \
+			 -end_traj 5 \
+			-dir_traj ./dyn \
+			-top_name  mproD_ebse.top \
+			-pocket False \
+			-xray False \
+			-num_res_prot 608 \
+			-fil_prot covid19_PROTEASED_3_min.pdb \
+			-dis_min 5 \
+			-prefix_filpdb N99 \
+			-name_atom N99 \
+			-num_plots 2 \
+			-dis_plots 5,25 \
+			-snaps_byone 50 \
+			-num_ns_anal 100 \
+			-percent_anal 10 \
+			-fragment EBS \ #name of the fragemnt (AA) in th epdb
+	> Info_R2_fdMD_ReactiveTraj

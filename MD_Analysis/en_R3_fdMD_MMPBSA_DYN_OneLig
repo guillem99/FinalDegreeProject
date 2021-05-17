@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH -J en_R3_mpro1_dyn_1
+#SBATCH -e err.guillemc
+#SBATCH -o out.guillemc
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH --ntasks-per-node=1
+
+
+export DIRI="/home/jaime/guillemc/mpro_fragments/MD_frags/mpro0003/dyn_1"
+cd $DIRI
+
+ ./R3_fdMD_MMPBSA_DYN_OneLig.py   > Info_R3_fdMD_MMPBSA_DYN_OneLig
+
+

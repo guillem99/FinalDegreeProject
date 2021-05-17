@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+python3 Create_Pipeline_Files.py  \
+            -molecule mpro0005 \
+            -R1 R1_pipeline_fdMD_OneTrajREM.py  \
+            -R2 R2_pipeline_fdMD_ReactiveTraj.py  \
+            -R3 R3_pipeline_fdMD_MMPBSA_DYN_OneLig.py  \
+            -dyn_1 /home/jaime/guillemc/mpro_fragments/MD_frags/mpro0005/dyn_1  \
+            -dyn_2 /home/jaime/guillemc/mpro_fragments/MD_frags/mpro0005/dyn_2  \
+            -dyn_3 /home/jaime/guillemc/mpro_fragments/MD_frags/mpro0005/dyn_3 \
+            -dyn_4 /home/jaime/guillemc/mpro_fragments/MD_frags/mpro0005/dyn_4  \
+            -queue_system sbatch  \
+            -dir_traj_dyn_1        ./dyn/       \
+            -dir_traj_dyn_2        ./dyn/        \
+            -dir_traj_dyn_3        ./dyn/        \
+            -dir_traj_dyn_4        ./dyn/       \
+            -top_name        mpro0005.top  \
+            -info_from_top   True  \
+            -num_res_prot    608      \
+            -Atom_Name       C99      \
+            -SuperposeProt   first        \
+            -ref_pdb         /home/jaime/guillemc/mpro_fragments/MD_frags/covid19_PROTEASED_3_min.pdb    \
+            -prefix_traj     mpro0005   \
+            -ini_traj        1           \
+            -end_traj        4            \
+            -ini_read        1            \
+            -end_read        last         \
+            -inc_read        1            \
+            -full_traj       True         \
+            -last_pdb        True         \
+            -clean           False        \
+            -pocket         False             \
+            -xray           False             \
+            -fil_prot       /home/jaime/guillemc/mpro_fragments/MD_frags/covid19_PROTEASED_3_min.pdb      \
+            -dis_min         5        \
+            -prefix_filpdb  C99      \
+            -name_atom      C99      \
+            -num_plots       2        \
+            -dis_plots       5,25     \
+            -snaps_byone     50       \
+            -num_ns_anal     80      \
+            -percent_anal    10       \
+            -fragment        lig     \
+     >  Info_Create_Pipeline_Files.txt
+

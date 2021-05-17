@@ -1,0 +1,33 @@
+#!/bin/bash -f
+#
+export DIRI="/scr/guillemc/mpro_ebse/ebse/dyn_1"
+cd $DIRI
+
+
+source /home/jaime/.bashrc
+source  /home/prog/amber18/miniconda/bin/activate py3
+conda info --envs
+
+export  AMBERHOME=/home/prog/amber18
+source $AMBERHOME/amber.sh
+
+
+ ./R1_fdMD_OneTrajREM.py  \
+	     -info_from_top   True  \
+             -top_name        mproD_ebse.top    \
+             -Atom_Name       N99               \
+             -SuperposeProt   first        \
+             -ref_pdb         covid19_PROTEASED_3_min.pdb    \
+             -dir_traj        ./dyn        \
+             -prefix_traj     mproD_ebse   \
+             -ini_traj        1            \
+             -end_traj        5            \
+             -ini_read        1            \
+             -end_read        last         \
+             -inc_read        1            \
+             -full_traj       True         \
+             -last_pdb        True         \
+             -clean           False        \
+  >  Info_R1_fdMD_OneTrajREM
+
+

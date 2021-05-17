@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+export DIRI="/home/guillem/Downloads/Transfer_files/mpro0003/dyn_1"
+cd $DIRI
+
+
+ ./Generate_Summary_Excel.py         \
+                             -sim_time           400         \
+                             -molecule_receptor   mpro         \
+                             -info_R2        Info_R2_fdMD_ReactiveTraj   \
+                             -ligand         0003      \
+                             -num_ns_anal    40      \
+                             -info_R4        Info_R4_fdMD_MMGBSA_Analize  \
+                             -num_dyns       4         \
+                             > Info_Generate_Summary_Excel         
+
+
