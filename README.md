@@ -41,3 +41,8 @@ This Pipeline is able to calcualted the intermediate steps needed to get all the
 * **Generate_Average_Excel_file.py**: Python program that is able to transform the Summary Excel file into an Average Excel file to know which would be the most suitable Binding site.
 
 **Note that:** After executing R3_fdMD_MMPBSA_DYN_OneLig.py file we need to transfer the files to another computer cluster and execute the MMGBSA for each reactive trajectory alone.
+
+## documents folder.
+* **FDP_Guillem_Cortiada_Rovira.pdf**: Final Degree Project document.
+
+
